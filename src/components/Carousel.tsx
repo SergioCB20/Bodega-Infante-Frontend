@@ -58,7 +58,8 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         {/* Left Arrow */}
         <button
           onClick={prevImage}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full"
+          aria-label="Previous Image"
+          className="carousel-arrow"
         >
           &#10094;
         </button>
@@ -66,7 +67,8 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         {/* Right Arrow */}
         <button
           onClick={nextImage}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full"
+          aria-label="Next Image"
+          className="carousel-arrow right-0"
         >
           &#10095;
         </button>
@@ -78,7 +80,8 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           <span
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`dot w-3 h-3 rounded-full cursor-pointer ${currentIndex === index ? 'bg-opacity-60' : 'bg-white'}`}
+            aria-label={`Go to slide ${index + 1}`}
+            className={`carousel-dot ${currentIndex === index ? 'carousel-dot-active' : 'carousel-dot-inactive'}`}
           />
         ))}
       </div>

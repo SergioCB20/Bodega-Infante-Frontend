@@ -14,3 +14,20 @@ export interface UnitCardProps {
     price:number,
     image_url:string,
 }
+
+export interface DropdownProps {
+    isOpen: boolean;
+    items: DropdownItemProps[];
+}
+
+export enum DropdownItemType {
+    LINK = 'link',
+    BUTTON = 'button',
+}
+
+export interface DropdownItemProps {
+    href?: string;
+    text: string;
+    onClick?: () => void;
+    type: DropdownItemType;
+}

@@ -5,7 +5,7 @@ import { packages,products } from "../../data/data";
 
 const Home = () => {
   return (
-    <div className="w-full h-full p-20 px-8 flex flex-col gap-8">
+    <div className="w-full p-20 px-8 flex flex-col gap-8">
       <Carousel items={packages}/>
       <div className="flex flex-col gap-8">
         <h2 className="text-xl font-bold">Nuestros Productos</h2>
