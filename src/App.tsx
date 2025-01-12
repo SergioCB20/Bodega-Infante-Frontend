@@ -27,8 +27,8 @@ function App() {
         <Route path="/auth/registration" element={<Registration />} />
 
         {/* Rutas protegidas para Admin */}
-        <Route element={<ProtectedRoute allowedRoles={['ROLE_ADMIN']} />}>
-          <Route path="/dashboard/:adminId" element={<AdminLayout/>}>
+        <Route element={<ProtectedRoute allowedRoles={["ROLE_ADMIN"]} />}>
+          <Route path="/dashboard/:adminId" element={<AdminLayout />}>
             <Route path="" element={<Dashboard />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="packages" element={<AdminPackages />} />
@@ -38,12 +38,16 @@ function App() {
         </Route>
 
         {/* Rutas protegidas para Usuario (ADMIN o CUSTOMER) */}
-        <Route element={<ProtectedRoute allowedRoles={['ROLE_ADMIN', 'ROLE_CUSTOMER']} />}>
+        <Route
+          element={
+            <ProtectedRoute allowedRoles={["ROLE_ADMIN", "ROLE_CUSTOMER"]} />
+          }
+        >
           <Route path="/profile/:userId" element={<Profile />} />
         </Route>
 
         {/* Rutas protegidas para Cliente */}
-        <Route element={<ProtectedRoute allowedRoles={['ROLE_CUSTOMER']} />}>
+        <Route element={<ProtectedRoute allowedRoles={["ROLE_CUSTOMER"]} />}>
           <Route path="/orders/:customerId" element={<Orders />} />
         </Route>
       </Routes>
@@ -52,4 +56,3 @@ function App() {
 }
 
 export default App;
-

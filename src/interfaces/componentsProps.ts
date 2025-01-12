@@ -31,3 +31,14 @@ export interface DropdownItemProps {
     onClick?: () => void;
     type: DropdownItemType;
 }
+
+export interface PanelProps {
+    title: string;
+    options: OptionPanelProps[];
+}
+
+export interface OptionPanelProps {
+    title: string;
+    description: string;
+    onClick: () => void;
+}
