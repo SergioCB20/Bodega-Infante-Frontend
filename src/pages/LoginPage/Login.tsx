@@ -22,6 +22,8 @@ const Login = () => {
   const onSubmit = async (data: any) => {
     setLoading(true);
     try {
+      setMessage(null);
+      setServerErrorMessage("");
       const response = await login(data);
       localStorage.setItem("token", response.token);
       setMessage(response.message);
@@ -31,7 +33,7 @@ const Login = () => {
       }, 1000);
     } catch (error: any) {
       setServerErrorMessage(
-        error.message || "Error al crear la cuenta. Intenta nuevamente."
+        error.message || "Error al ingresar a la cuenta"
       );
     } finally {
       setLoading(false);

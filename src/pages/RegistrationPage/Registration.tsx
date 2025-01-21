@@ -19,8 +19,9 @@ const Registration = () => {
   const onSubmit = async (data: any) => {
     setLoading(true);
     try {
+      setMessage("");
       const response = await registrationRequest(data);
-      setMessage(response.message); // Suponiendo que el backend devuelve un mensaje de éxito
+      setMessage(response.message); 
       setTimeout(() => {
         navigate("/auth/login");
         window.location.reload();

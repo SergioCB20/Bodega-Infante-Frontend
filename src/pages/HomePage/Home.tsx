@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
 import Carousel from "../../components/Carousel";
 import UnitCard from "../../components/UnitCard";
+import { Package, Product } from "../../interfaces/bussinessModels";
 import { packages,products } from "../../data/data";
 
-
 const Home = () => {
+
+  /*const [packages,setPackages] = useState<Package[]>([]);
+  const [products,setProducts] = useState<Product[]>([]);
+
+  useEffect(()=>{
+
+  },[])*/
+
   return (
     <div className="w-full p-20 px-8 flex flex-col gap-8">
       <Carousel items={packages}/>
